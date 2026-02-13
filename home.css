@@ -673,6 +673,7 @@ footer nav a {
     .projects-container,
     .workflows-container {
         gap: 2rem !important; /* premium vertical spacing */
+        padding: 0 1rem !important; /* space from screen edges */
     }
 
     .project,
@@ -701,4 +702,5 @@ footer nav a {
         font-size: 1.5rem !important;
     }
 }
+
 
