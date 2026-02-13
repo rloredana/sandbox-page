@@ -1,0 +1,573 @@
+/* ============================================================================ 
+   FLEX LAYOUT TO KEEP FOOTER AT BOTTOM
+   ============================================================================ */
+html, body {
+    height: 100%;       /* Full viewport height */
+    margin: 0;          /* Ensure no default margin */
+}
+
+body {
+    display: flex;       /* Flex column layout */
+    flex-direction: column;
+}
+
+main {
+    flex: 1;             /* Take all space between header and footer */
+}
+
+
+/* ============================================================================
+   UNIVERSAL RESET
+   This applies a basic reset to ensure consistent styling across browsers.
+   ============================================================================ */
+
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================================================
+   BODY STYLING
+   Basic body setup including font, background, and general layout properties.
+   ============================================================================ */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #666;
+    background-color: #fff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; /* Aligns items to the left
+    justify-content: flex-start; */
+    width: 100%;
+}
+
+/* ============================================================================
+   HEADER STYLING
+   Defines the look of the header, including logo, navigation, and general layout.
+   ============================================================================ */
+
+header {
+    background: #9e7c02;
+    color: white;
+    padding: 1rem 0; /* Defines the height of the header */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the content inside the header */
+    position: sticky; /* Keeps the header fixed at the top */
+    top: 0; /* Ensures it sticks at the top of the page */
+    z-index: 1000; /* Ensures the header stays on top of other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Positions logo and nav on opposite sides */
+    width: 100%;
+    max-width: 1200px; /* Constrains the width of the header */
+    padding: 0 5%; /* Adds space inside the header, from the left and right */
+}
+
+/* LOGO AND NAME CONTAINER */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between the logo and the name */
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+.logo {
+    height: 60px; /* Defines the size of the logo */
+    transition: transform 0.2s ease; /* Smooth transition */
+}
+
+.logo:hover {
+    transform: scale(1.1); /*scale-up effect*/
+    opacity: 0.8;
+}
+
+.logo:active {
+    transform: scale(0.9); /* Shrink effect on click */
+}
+
+/* ============================================================================
+   NAVIGATION LINKS
+   Consolidated and used for both header and footer navigation links
+   ============================================================================ */
+
+nav {
+    display: flex;
+    gap: 20px; /* Space between each navigation link */
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #cccccc; /* Darker text color on hover */
+}
+
+/* ============================================================================
+   MAIN SECTIONS
+   General styling for sections like About and Projects.
+   ============================================================================ */
+
+section {
+    width: 100%;
+    max-width: 1200px; /* Ensures sections do not exceed this width */
+    padding: 3rem 5%;
+    text-align: left;
+    margin: 0 auto; /* Centers the section horizontally */
+    scroll-margin-top: 40px; /* adjust based on your header height */
+}
+
+/* ============================================================================
+   SECTION WRAPPER
+   Ensures that sections take the full width and align their content.
+   ============================================================================ */
+
+.section-wrapper {
+    width: 100%;
+    padding: 2rem 0; /* Adds padding to the wrapper for proper spacing */
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    align-items: flex-start; /* Aligns content to the left */
+}
+
+/* Specific Background for About and Projects Sections */
+
+.about-wrapper {
+    background-color: #ffffff;
+}
+
+/* .projects-wrapper {
+    background-color: #ffffff /* #fffef7; /* Background color for Projects section
+} */
+
+.projects-wrapper {
+    background: linear-gradient(180deg, #f9f9f9, #fffaca);
+}
+
+.workflows-wrapper {
+    background: #ffffff
+}
+
+.skills-wrapper {
+    background-color: #fffef7; /* Background color for Skills section */
+}
+
+/* ============================================================================
+   ABOUT SECTION
+   This section contains the "About Me" text.
+   ============================================================================ */
+
+#about {
+    display: flex;
+    align-items: center;             /* vertically center text and image */
+    justify-content: flex-start;     /* text starts on the left */
+    gap: 0rem;                       /* space between text and image */
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0rem auto;
+}
+
+#about .content-wrapper {
+    flex: 0 0 50%;
+    position: relative;    /* needed for text overlap */
+    z-index: 2;            /* text will appear on top of image */
+    margin-right: -10%;     /* optional: slide text slightly over image */
+}
+
+#about .about-image {
+    flex: 0 0 50%;
+    text-align: right;
+    position: relative;  /* allows text to overlap later */
+}
+
+#about .about-image img {
+    max-width: 127%;      /* make image bigger than its column */
+    height: auto;
+    display: inline-block;
+    position: relative;    /* keep it in flow but allows layering */
+    z-index: 1;            /* ensure it sits behind text if text overlaps*/
+    transform: perspective(1200px) rotateY(-20deg);
+    opacity: 0.8;           /* adjust between 0 (invisible) and 1 (solid) */
+    border-radius: 10px;  
+}
+
+/* ============================================================================
+   MODERN ABOUT CONTENT (BASED ON HERO DESIGN)
+   ============================================================================ */
+
+.about-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.about-highlight {
+    border-bottom: 4px solid #f2c811;
+    padding-bottom: 4px;
+}
+
+.about-tagline {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.about-description {
+    font-size: 1rem;
+    color: #555;
+    max-width: 520px;
+    margin-bottom: 2rem;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.about-feature strong {
+    display: block;
+    color: #222;
+    font-size: 0.95rem;
+}
+
+.about-feature p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.about-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    fill: #f2c811; /* color for inline SVG */
+}
+
+.about-buttons {
+    display: flex;
+    gap: 0.5rem;           /* small space between buttons */
+    margin-top: 1rem;      /* space from content above */
+}
+
+.about-button {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;    /* smaller padding */
+    font-size: 0.85rem;        /* smaller text */
+    font-weight: 600;
+    background-color: #f2c811;
+    color: #222;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.about-button:hover {
+    background-color: #e0b500;
+    transform: translateY(-1px);  /* subtle hover lift */
+}
+
+/* Buttons container */
+.about-buttons {
+    display: flex;
+    gap: 1rem;          /* space between buttons */
+    margin-bottom: 2rem; /* space below buttons */
+}
+
+.about-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #f2c811;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 120px;  /* make all buttons same width */
+}
+
+/* Wrapper aligns with other sections */
+.skills-marquee-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 5%;
+}
+
+.skills-marquee {
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.skills-track {
+  display: flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: scrollSkills 20s linear infinite;
+}
+
+.skills-track span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 0.03em;
+}
+
+/* Horizontal scrolling animation */
+@keyframes scrollSkills {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ============================================================================
+   TITLE STYLING
+   Styling for "About Me" and "Projects" and "workflows" titles (h2 elements).
+   ============================================================================ */
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+/* ============================================================================  
+   SUBTITLE STYLING  
+   Styling for subtitles (h3 elements in various sections).  
+   ============================================================================ */
+
+.section-subtitle {
+    font-size: 1.25rem;  /* Slightly smaller than section titles */
+    font-weight: normal; /* Ensures the text is not bold */
+    color: #444;  /* A slightly lighter shade for contrast -#444 - #F4F7FD */
+    margin-bottom: 0.75rem; /* Space below the subtitle */
+}
+
+/* ============================================================================
+   PROJECTS SECTION
+   Flexbox for arranging the project cards.
+   ============================================================================ */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap to the next row */
+    gap: 2rem; /* Space between items */
+    justify-content: center; /* Centers the items in the row */
+}
+
+.project {
+    display: block;           /* make entire card clickable */
+    text-decoration: none;    /* remove underline */
+    color: inherit;           /* keep text color */
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 2rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img {
+    width: 100%; /* Makes sure the image fits the width of the project card */
+    height: auto;
+    border-radius: 8px; /* Rounds the corners of the image */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* moves the card up by 10px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* optional: slightly stronger shadow for effect */
+}
+
+/* ============================================================================
+   Workflows SECTION
+   Flexbox for arranging the workflows images.
+   ============================================================================ */
+
+.workflows-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 2rem; /* Space between items */
+    justify-content: center; /* Centers the items in the row */
+}
+
+.workflows {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: #f6f6f6;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 2rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workflows img {
+    width: 100%; /* Ensures the image fits the width */
+    height: auto;
+    border-radius: 8px; /* No rounded corners */
+}
+
+.workflows:hover {
+    transform: translateY(-10px); /* moves the card up by 10px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* optional: slightly stronger shadow for effect */
+}
+
+/* ============================================================================
+   SKILLS LOGOS
+   Styling for the logos displayed in the "Skills" section.
+   ============================================================================ */
+
+.skills-logos {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.skills-logos ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between each logo */
+}
+
+.skills-logos img {
+    width: 50px; /* Size of each logo */
+    height: 50px;
+}
+
+/* ============================================================================
+   FOOTER STYLING
+   Footer layout, including copyright and links.
+   ============================================================================ */
+
+footer {
+    background: #f9f9f9;
+    text-align: center;
+    padding: 1.5rem;
+    color: #333;
+    font-size: 0.9rem;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the footer content */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Positions footer content on both sides */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Constrains the width of the footer */
+    padding: 0 5%; /* Adds space inside the footer */
+}
+
+/* FOOTER NAVIGATION LINKS */
+footer nav {
+    display: flex;
+    gap: 20px; /* Space between each footer link */
+}
+
+footer nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px; /* Position at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    color: #333333; /* Arrow color */
+    font-size: 2rem; /* Adjust size as needed */
+    text-decoration: none;
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s;
+}
+
+.back-to-top:hover {
+    color: gray; /* Changes color when hovered */
+    transform: translateX(-50%) translateY(-5px); /* Moves arrow up by 5px, keeps horizontal centering */
+}
+
+
+/* =============================
+   MOBILE RESPONSIVE FIXES
+   ============================= 
+@media (max-width: 1200px) {
+
+    /* About Section: stack vertically 
+    #about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    #about .content-wrapper,
+    #about .about-image {
+        flex: 0 0 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    #about .about-image img {
+        max-width: 90%;
+        transform: none; /* remove perspective 
+    }
+
+    /* Projects & Workflows: stack vertically 
+    .projects-container,
+    .workflows-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .project,
+    .workflows {
+        flex: 0 0 100%;
+    }
+
+    /* Header nav: vertical on small screens 
+    header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Footer nav: vertical on small screens 
+    footer nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Reduce padding on sections 
+    section {
+        padding: 2rem 5%;
+    }
+
+} */

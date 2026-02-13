@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Name | Data Portfolio</title>
+    <link rel="icon" type="image/png" href="logo/rl_white.png">
+    <!-- Some browsers (like Chrome) will automatically look for a favicon.ico file in the root directory of the website -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo and Name -->
+            <div class="logo-container">
+                <a href="home.html">
+                    <img src="logo/rl_gold.png" alt="LR Logo" class="logo">
+                </a>
+                <h1>My Name</h1>
+            </div>
+            <!-- Navigation Links -->
+            <nav>
+                <a href="home.html">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <div class="section-wrapper about-wrapper">
+            <section id="about">
+                <div class="content-wrapper">
+
+                    <h1 class="about-title">
+                        DATA ANALYST &<br>
+                        <span class="about-highlight">BI SOLUTIONS DEVELOPER</span>
+                    </h1>
+
+                    <p class="about-tagline">
+                        Turning data into insights that drive business success.
+                    </p>
+
+                    <p class="about-description">
+                        Interactive BI dashboards and data solutions
+                        that help organizations track performance, uncover trends,
+                        and make data-driven decisions<br>
+                        with confidence.
+                    </p>
+
+                    <div class="about-feature">
+                        <img src="icons/dashboard.png" class="about-icon" alt="Dashboard Icon">
+                        <div>
+                            <strong>BI Dashboards</strong>
+                            <p>Clear, interactive, KPI-focused visuals</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <img src="icons/bar-chart.png" class="about-icon" alt="Advanced Analytics">
+                        <div>
+                            <strong>Advanced Analytics</strong>
+                            <p>SQL, DAX, and complex data modeling</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <img src="icons/settings.png" class="about-icon" alt="Automated Reporting">
+                        <div>
+                            <strong>Automated Reporting</strong>
+                            <p>Complete & reliable reporting solutions</p>
+                        </div>
+                    </div>
+
+                    <div class="about-buttons">
+                        <a href="#projects" class="about-button">View Projects</a>
+                        <a href="#contact" class="about-button">Get In Touch</a>
+                    </div>
+
+                </div>
+
+                <div class="about-image">
+                    <img src="home/Cover-for-About.png" alt="About Image">
+                </div>
+
+            </section>
+
+            <div class="skills-marquee-wrapper">
+                <div class="skills-marquee">
+                    <div class="skills-track">
+                        <span> Advanced SQL</span>
+                        <span> Python</span>
+                        <span> BigQuery</span>
+                        <span> Power BI (advanced DAX)</span>
+                        <span> Looker Studio</span>
+                        <span> Data Modeling</span>
+                        <span> Forecasting</span>
+                        <span> Excel</span>
+                        <span> Salesforce</span>
+
+                        <!-- Duplicate for seamless loop -->
+                        <span> Advanced SQL</span>
+                        <span> Python</span>
+                        <span> BigQuery</span>
+                        <span> Power BI (advanced DAX)</span>
+                        <span> Looker Studio</span>
+                        <span> Data Modeling</span>
+                        <span> Forecasting</span>
+                        <span> Excel</span>
+                        <span> Salesforce</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section-wrapper projects-wrapper">
+                <section id="projects">
+                    <div class="content-wrapper">
+                        <!-- Projects Title -->
+                        <h2 class="section-title">Analytics & Visualization</h2>
+                        <div class="projects-container">
+                            <a href="revenue-dashboard.html" class="project">
+                                <img src="home/projects/RevDashNew_.png" alt="Sales Dashboard">
+                                <h3 class="section-subtitle">Revenue & Client Insights</h3>
+                                <p>Interactive dashboard visualising key sales KPIs, trends, and insights to support
+                                    strategic decision-making.</p>
+                                <br>
+                                <p>MySQL • Zoho • Power BI</p>
+                            </a>
+                            <a href="executive-dashboard.html" class="project">
+                                <img src="home/projects/EXECdash_new_.png" alt="Product Insights">
+                                <h3 class="section-subtitle">Executive Performance</h3>
+                                <p>Executive dashboard visualising key metrics, tracking revenue trends, and
+                                    delivering
+                                    business insights.</p>
+                                <br>
+                                <p>BigQuery • ARIMA • PowerBI</p>
+                            </a>
+                            <a href="commercial-dashboard.html" class="project">
+                                <img src="home/projects/Commercial_dash_.png" alt="SQL Project">
+                                <h3 class="section-subtitle">Commercial Overview</h3>
+                                <p>Finance dashboard visualising key KPIs, profitability trends, and cost insights
+                                    to
+                                    drive
+                                    decision-making.</p>
+                                <br>
+                                <p>QlikSense • Excel • PowerBI</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Workflows Projects Section -->
+            <div class="section-wrapper workflows-wrapper">
+                <section id="workflows">
+                    <div class="content-wrapper">
+                        <!-- Projects Title -->
+                        <h2 class="section-title">Data Intelligence & Automation</h2>
+                        <div class="workflows-container">
+                            <a href="classifier-app.html" class="workflows">
+                                <img src="home/workflows/Client-Class.png" alt="Cass">
+                                <br>
+                                <h3 class="section-subtitle">Client Classifier Application</h3>
+                                <p>A Python application that classifies clients using large-scale data and custom
+                                    business
+                                    logic.</p>
+                                <br>
+                                <!-- <p>Client data processing is <strong>85%</strong> faster.</p> -->
+                                <p><strong>85% faster</strong> client data processing</p>
+                            </a>
+                            <a href="crm-audit.html" class="workflows">
+                                <img src="home/workflows/CRM-Audit.png" alt="CRM">
+                                <br>
+                                <h3 class="section-subtitle">Data Audit & Transformation</h3>
+                                <p>Audit, transform and analyse data, leveraging dashboards to identify patterns and measure
+                                    effectiveness.</p>
+                                <br>
+                                <!-- <p>Enables <strong>100%</strong> data-driven decisions.</p> -->
+                                <p><strong>100% data-driven</strong> decisions enabled</p>
+                            </a>
+                            <a href="utm-generator.html" class="workflows">
+                                <img src="home/workflows/UTM-gen.png" alt="UTM">
+                                <br>
+                                <h3 class="section-subtitle">UTM Generator</h3>
+                                <p>A Python + Streamlit application that automates UTM URL creation across channels
+                                    and
+                                    tactics.</p>
+                                <br>
+                                <!-- <p>Reducing manual effort by <strong>90%</strong>.</p> -->
+                                <p><strong>90% faster</strong> URL generation</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- Skills Logos Section -->
+            <!-- <div class="section-wrapper skills-wrapper">
+                <section id="skills-logos">
+                    <div class="content-wrapper">
+                        <div class="skills-logos">
+                            <ul>
+                                <li><img src="Tools_Logos/sql_logo.png" alt="SQL Logo"></li>
+                                <li><img src="Tools_Logos/excel_logo.png" alt="Excel Logo"></li>
+                                <li><img src="Tools_Logos/python_logo.png" alt="Python Logo"></li>
+                                <li><img src="Tools_Logos/looker_logo.png" alt="Looker Studio Logo"></li>
+                                <li><img src="Tools_Logos/powerbi_logo.png" alt="Power BI Logo"></li>
+                                <li><img src="Tools_Logos/salesforce_logo.png" alt="Salesforce Logo"></li>
+                                <li><img src="Tools_Logos/zoho.png" alt="Salesforce Logo"></li>
+                                <li><img src="Tools_Logos/hubspot.png" alt="Salesforce Logo"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 My Name</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <!-- Up Arrow Button -->
+            <a href="#" class="back-to-top">︿</a>
+        </div>
+    </footer>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset;
+            header.style.top = (currentScroll > lastScroll) ? '-100px' : '0';
+            lastScroll = currentScroll;
+        };
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.querySelector(".back-to-top");
+
+            // Show/hide button on scroll
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button
+                } else {
+                    backToTop.style.display = "none"; // Hide button
+                }
+            });
+
+            // Smooth scroll to top
+            backToTop.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
